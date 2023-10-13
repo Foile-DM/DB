@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Форма</title>
+{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1>Форма для отправки</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="fio" placeholder="Фамилия И.О."><br>
+            <input type="number" name="cabinet" placeholder="Номер кабинета"><br>
+            <input type="number" name="department" placeholder="Отдел"><br>
+            <input type="text" name="user_name" placeholder="Имя пользователя"><br>
+            <input type="text" name="pc_name" placeholder="Имя компьютера"><br>
+            <input type="text" name="ip" placeholder="IP-адрес"><br>
+            <span>{{ complete }}</span><br>
+            <span>{{ error }}</span><br>
+            <button class="btn btn-success" type="submit">Отправить</button>
+
+        </form>
+    </div>
+{% endblock %}
